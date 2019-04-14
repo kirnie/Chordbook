@@ -1,7 +1,7 @@
 # Chordbook
 Chordbook is my first web app written in Flask using MYSQL db to store data.
 
-#Features
+# Features
 - Homepage: list of all songs
 - Register
 - Login/Logout
