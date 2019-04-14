@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{song.title}}</h1>
+  <small>Key: {{song.chord}} </small>
+  <hr>
+  <div>
+    {{song.body | safe}}
+  </div>
+{% endblock %}

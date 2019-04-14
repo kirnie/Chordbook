@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Songs</h1>
+    <ul class="list-group">
+    {% for song in songs | sort(attribute='title') %}
+      <li class="list-group-item"><a href="songs/{{song.id}}">{{song.title}}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

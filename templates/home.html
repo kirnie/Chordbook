@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Piesne chvál</h1>
+  </div>
+  <div>
+    <ul class="list-group">
+    {% for song in songs | sort(attribute='title') %}
+      <li class="list-group-item"><a href="songs/{{song.id}}">{{song.title}}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+
+
+{% endblock %}

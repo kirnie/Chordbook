@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <a class="btn btn-success" href="/add_song">Pridaj pieseň </a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Key</th>
+      <th>Názov</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for song in songs %}
+      <tr>
+        <td>{{song.id}}</td>
+        <td>{{song.chord}}</td>
+        <td>{{song.title}}</td>
+        <td><a href="edit_song/{{song.id}}" class="btn btn-warning float-right">Upraviť</a></td>
+        <td>
+            <form action="{{url_for('delete_song', id=song.id)}}" method='POST'>
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Vymazať" class="btn btn-danger">
+            </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}
